@@ -5,7 +5,9 @@ This OpenFOAM post-processing utility is designed for carrying out a spatial ave
 * Use ./Allwmake
 
 **Capabilities**
-* Any cyclic direction should be allowed (Please report any possible issue). 
+* Spatial averaging along a cyclic direction. 
+* Cyclic direction automatically detected. Any cyclic direction should be allowed (Please report any issue). 
+* A new mesh~(called *extrudedMesh*) with a unique control volume in the cyclic direction is created. This part of the code is mostly based on the *extrude2DMesh* tool available by default in OpenFOAM.
 
 **How to use ?**
 
