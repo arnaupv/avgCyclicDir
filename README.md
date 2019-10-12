@@ -25,7 +25,7 @@ OpenFOAM-4.1
 	ln -s ../../system
 
 **Limitiations :**
-* OpenFOAM v1706 [Other OpenFOAM versions have not been tested].
+* OpenFOAM-4.1 [Other OpenFOAM versions have not been tested].
 * This tool is not yet paralellized.
 * Only one cyclic direction is allowed.
 * The spatial discretitzation in the cyclic direction should be uniform. Otherwise
