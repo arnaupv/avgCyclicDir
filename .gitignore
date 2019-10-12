@@ -1,2 +1,4 @@
 # ignore all logs
 tests
+Make/linux64GccDPInt32Opt
+extrude2DMesh/Make/linux64GccDPInt32Opt
