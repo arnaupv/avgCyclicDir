@@ -1,4 +1,5 @@
 namespace Foam {
+	/*
 	template<class Type, template<class> class PatchField, class GeoMesh>
 	wordList ReadFields
 	(
@@ -44,7 +45,7 @@ namespace Foam {
 				);
 		}
 		return masterNames;
-	}
+	}*/
 
 	template<class Type, template<class> class PatchField, class GeoMesh>
 	void CreateFields
@@ -62,7 +63,7 @@ namespace Foam {
 		forAll(fieldsAvgCyclicDir, i)
 		{
 			string varName = string(fields[i].name());
-			varName.removeEnd("Mean");
+			varName.replace("Mean","");
 			varName+="AvgCyclicDir";
 			Info<< "* " << varName << endl;
 
@@ -130,14 +131,14 @@ namespace Foam {
 
 				cuttingPlane SurfaceSource(planeRef,mesh,triangulate,labelUList::null());
 
-				Field<Type> values(SurfaceSource.meshCells().size());
+				Field<Type> values(SurfaceSource.cutCells().size());
 
 				forAll(values, valuei)
 				{
 					values[valuei] = interpolatorPtr().interpolate                       
 						(
-						 mesh.cellCentres()[SurfaceSource.meshCells()[valuei]],
-						 SurfaceSource.meshCells()[valuei]
+						 mesh.cellCentres()[SurfaceSource.cutCells()[valuei]],
+						 SurfaceSource.cutCells()[valuei]
 						); 
 				}
 				if(counter==1)
@@ -151,7 +152,7 @@ namespace Foam {
 			basePoint[sD] = sLMin+sDInc*0.5;
 			cuttingPlane SurfaceRef(plane(basePoint,sN),mesh,triangulate,labelUList::null());
 			
-			const vectorField& Cf = SurfaceRef.Cf();
+			const vectorField& Cf = SurfaceRef.faceCentres();
 			
 			//Internal Field
 			forAll(Cf, facei)

@@ -41,7 +41,7 @@ Application
 #include "addPatchCellLayer.H"
 #include "patchToPoly2DMesh.H"
 #include "wordRe.H"
-#include "wordRes.H"
+//#include "wordRes.H"
 #include "ReadFields.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
