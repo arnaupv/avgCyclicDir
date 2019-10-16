@@ -1,9 +1,6 @@
 # OpenFOAM post-processing utility: avgCyclicDir
 This OpenFOAM post-processing utility is designed for carrying out a spatial averaging in the cyclic direction (if any). The averaged data is saved using a new mesh with a unique control volume in the cyclic direction, considerably reducing the required amount of memory.
 
-**Compatibility**
-OpenFOAM-v1706
-
 **Instalation**
 * Use ./Allwmake
 
@@ -25,7 +22,7 @@ OpenFOAM-v1706
 	ln -s ../../system
 
 **Limitiations :**
-* OpenFOAM v1706 [Other OpenFOAM versions have not been tested].
+* Available branches compatible for OpenFOAM v1706 and OpenFOAM-4.1 [Other OpenFOAM versions have not been tested].
 * This tool is not yet paralellized.
 * Only one cyclic direction is allowed.
 * The spatial discretitzation in the cyclic direction should be uniform. Otherwise

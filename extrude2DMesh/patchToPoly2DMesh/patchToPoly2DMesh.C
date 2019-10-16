@@ -172,7 +172,7 @@ void Foam::patchToPoly2DMesh::addPatchFacesToFaces()
 void Foam::patchToPoly2DMesh::addPatchFacesToOwner()
 {
     const label nInternalEdges = patch_.nInternalEdges();
-    const faceList& faces = patch_.surfFaces();
+    const faceList& faces = patch_.faces();
     const label nExternalEdges = patch_.edges().size() - nInternalEdges;
     const labelList& meshPoints = patch_.meshPoints();
 
